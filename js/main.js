@@ -29,4 +29,15 @@ popoverTrigger.addEventListener('click', e => {
   } else {
     popover.setAttribute('hidden', true);
   }
+  document.addEventListener('click', event => {
+    //   adding an event listener to sibling elements closest to the pop-over or the pop-over trigger to close it outside of the trigger
+    if (
+      event.target.closest('.popover') ||
+      event.target.closest('.popover-trigger')
+      //    LOGIC: If the target from the click is within the closest sibling to .pop-over OR .pop-over trigger then
+    )
+      return;
+    popover.setAttribute('hidden', true);
+    // sets the pop-over state to true to hide the pop-over
+  });
 });
